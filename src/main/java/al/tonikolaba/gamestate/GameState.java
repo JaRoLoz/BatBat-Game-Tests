@@ -95,7 +95,7 @@ public abstract class GameState extends BasicState {
 
 	protected void handleObjects(TileMap tileMap, List<Enemy> enemies, List<EnemyProjectile> eprojectiles,
 			List<Explosion> explosions) {
-		ArrayList<Enemy> enemiesToRemove = new ArrayList<>();
+		ArrayList<Enemy> enemiesToRemove = new ArrayList<Enemy>();
 		// update enemies
 		for (int i = 0; i < enemies.size(); i++) {
 			Enemy e = enemies.get(i);
@@ -110,7 +110,7 @@ public abstract class GameState extends BasicState {
 			enemies.remove(enemy);
 		}
 
-		ArrayList<EnemyProjectile> projectilesToRemove = new ArrayList<>();
+		ArrayList<EnemyProjectile> projectilesToRemove = new ArrayList<EnemyProjectile>();
 		// update enemy projectiles
 		for (int i = 0; i < eprojectiles.size(); i++) {
 			EnemyProjectile ep = eprojectiles.get(i);
@@ -124,7 +124,7 @@ public abstract class GameState extends BasicState {
 			eprojectiles.remove(enemyProjectile);
 		}
 
-		ArrayList<Explosion> explosionsToRemove = new ArrayList<>();
+		ArrayList<Explosion> explosionsToRemove = new ArrayList<Explosion>();
 		// update explosions
 		for (int i = 0; i < explosions.size(); i++) {
 			explosions.get(i).update();
@@ -161,18 +161,18 @@ public abstract class GameState extends BasicState {
 		player.setTime(PlayerSave.getTime());
 
 		// enemies
-		enemies = new ArrayList<>();
-		eprojectiles = new ArrayList<>();
+		enemies = new ArrayList<Enemy>();
+		eprojectiles = new ArrayList<EnemyProjectile>();
 
 		// energy particle
 		ArrayList<EnergyParticle> energyParticles;
-		energyParticles = new ArrayList<>();
+		energyParticles = new ArrayList<EnergyParticle>();
 
 		// init player
 		player.init(enemies, energyParticles);
 
 		// explosions
-		explosions = new ArrayList<>();
+		explosions = new ArrayList<Explosion>();
 
 		// hud
 		hud = new HUD(player);
@@ -188,7 +188,7 @@ public abstract class GameState extends BasicState {
 
 		// start event
 		eventStart = true;
-		tb = new ArrayList<>();
+		tb = new ArrayList<Rectangle>();
 		eventStartFunc();
 	}
 

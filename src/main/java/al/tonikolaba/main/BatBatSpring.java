@@ -18,11 +18,7 @@ public class BatBatSpring {
 		ConfigurableApplicationContext context = new SpringApplicationBuilder(BatBatSpring.class).headless(false)
 				.run(args);
 
-		EventQueue.invokeLater(() -> {
-			@SuppressWarnings("unused")
-			BatBatGame window = context.getBean(BatBatGame.class);
-			// window.setVisible(true);
-		});
+		new BatBatGame();
 	}
 
 }

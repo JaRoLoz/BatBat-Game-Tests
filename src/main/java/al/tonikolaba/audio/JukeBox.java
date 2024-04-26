@@ -25,7 +25,7 @@ public class JukeBox {
 	}
 
 	public static void init() {
-		clips = new HashMap<>();
+		clips = new HashMap<String, Clip>();
 		gap = 0;
 	}
 

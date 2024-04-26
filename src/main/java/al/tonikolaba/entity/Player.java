@@ -115,7 +115,7 @@ public class Player extends MapObject {
 					.read(getClass().getResourceAsStream("/Sprites/Player/BatterySpirtes.gif"));
 
 			int count = 0;
-			sprites = new ArrayList<>();
+			sprites = new ArrayList<BufferedImage[]>();
 			for (int i = 0; i < NUMFRAMES.length; i++) {
 				BufferedImage[] bi = new BufferedImage[NUMFRAMES[i]];
 				for (int j = 0; j < NUMFRAMES[i]; j++) {
@@ -134,7 +134,7 @@ public class Player extends MapObject {
 			LoggingHelper.LOGGER.log(Level.SEVERE, e.getMessage());
 		}
 
-		energyParticles = new ArrayList<>();
+		energyParticles = new ArrayList<EnergyParticle>();
 
 		setAnimation(IDLE_ANIM);
 
@@ -423,7 +423,7 @@ public class Player extends MapObject {
 		}
 
 		// energy particles
-		ArrayList<EnergyParticle> particlesToRemove = new ArrayList<>();
+		ArrayList<EnergyParticle> particlesToRemove = new ArrayList<EnergyParticle>();
 		for (int i = 0; i < energyParticles.size(); i++) {
 			energyParticles.get(i).update();
 			if (energyParticles.get(i).shouldRemove()) {
